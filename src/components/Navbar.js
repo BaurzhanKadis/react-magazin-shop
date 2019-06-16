@@ -29,6 +29,11 @@ class Navbar extends Component {
               my cart
             </ButtonContainer>
           </Link>
+          <Link to='/contacts' className="ml-auto">
+            <ButtonContainer>
+              contacts
+            </ButtonContainer>
+          </Link>
         </NavWrapper>
       </div>
     );
