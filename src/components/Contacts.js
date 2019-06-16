@@ -49,4 +49,21 @@ const ContactsForm = styled.div`
   margin: 50px auto;
   width: 50%;
 `;
+const AmoCRM = require( 'amocrm-js' );
+ 
+const crm = new AmoCRM({
+    // логин пользователя в портале, где адрес портала domain.amocrm.ru
+    domain: 'https://todd45.amocrm.ru', // может быть указан полный домен вида domain.amocrm.ru, domain.amocrm.com
+    auth: {
+        login: 'todd45',
+        hash: 'f33955fc1b899681b16260dedebd21438ad5d87f', // API-ключ доступа
+    }
+});
+// Вход в портал
+crm.connect().then(() => {
+  console.log( `Вход в портал осуществлён` );
+})
+.catch( e => {
+  console.log( 'Ошибка входа', e );
+});
 export default Contacts;
